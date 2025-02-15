@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}User Profile - ShopEase{% endblock %}
+
+{% block style %}
+<style>
+    .user-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+    }
+    .user-container {
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        text-align: center;
+        width: 450px;
+    }
+    h2 {
+        color: #333;
+    }
+    .logout-btn {
+        background-color: #dc3545;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .logout-btn:hover {
+        background-color: #c82333;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="user-page">
+    <div class="user-container">
+        <h2>Welcome, {{ user.email }}</h2>
+        <p>You are logged in successfully.</p>
+        <a href="{{ url_for('logout') }}"><button class="logout-btn">Logout</button></a>
+    </div>
+</div>
+{% endblock %}

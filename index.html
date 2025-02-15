@@ -1,0 +1,541 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block style %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: aqua;
+            color: #fff;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .search-bar {
+            flex: 1;
+            padding: 10px;
+            margin: 0 20px;
+            border-radius: 4px;
+            border: none;
+        }
+        .nav-icons a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        .category-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .category-item {
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .category-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .featured {
+            background-color: #f8d7da;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .product-section {
+            padding: 20px;
+        }
+        .product-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        .product {
+            width: 150px;
+            text-align: center;
+        }
+        .product img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .customer-reviews {
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .customer-reviews h2 {
+            margin-bottom: 10px;
+        }
+        .review {
+            margin: 10px 0;
+            font-style: italic;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    {% block content %}
+
+    <!-- Categories -->
+    <nav class="category-nav">
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/698ba0cebe456aaf.jpg?q=100" alt="Top Offers">
+            <p>Top Offers</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/44e10b16e649b691.jpg?q=100" alt="Mobiles">
+            <p>Mobiles & Tablets</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/717b5077a5e25324.jpg?q=100" alt="TVs">
+            <p>TVs & Appliances</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/4da1d0d19350cc84.jpg?q=100" alt="Electronics">
+            <p>Electronics</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/9d4e9c605fc1d2d3.jpg?q=100" alt="Fashion">
+            <p>Fashion</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/a5e656672d0548dd.jpg?q=100" alt="Beauty">
+            <p>Beauty</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/5b813b64a3179898.jpg?q=100" alt="Home">
+            <p>Home & Kitchen</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/7a5e96c10ada8a56.jpg?q=100" alt="Furniture">
+            <p>Furniture</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/57fe1ffe54569c41.jpg?q=100" alt="Travel">
+            <p>Travel</p>
+        </div>
+        <div class="category-item">
+            <img src="https://rukminim2.flixcart.com/fk-p-flap/80/80/image/25f400c36bc3487d.jpg?q=100" alt="Grocery">
+            <p>Grocery</p>
+        </div>
+    </nav>
+
+    <!-- Featured -->
+    <section class="featured">
+        <p>Lighting Essentials - Min 40% Off</p>
+    </section>
+
+    <!-- Products -->
+    <section class="product-section">
+        <h2>Under ₹300</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg" alt="Product 1">
+                <p>Product 1</p>
+            </div>
+            <div class="product">
+                <img src="https://thumbs.dreamstime.com/z/fresh-fruits-supermarket-7816657.jpg" alt="Product 2">
+                <p>Product 2</p>
+            </div>
+            <div class="product">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.v9ZgI1pA4Ig8aQ05tW8sKQHaE8" alt="Product 3">
+                <p>Product 3</p>
+            </div>
+            <div class="product">
+                <img src="https://thumbs.dreamstime.com/z/shenzhen-china-young-women-buy-leather-bags-shopping-malls-woman-to-mall-88791630.jpg" alt="Product 4">
+                <p>Product 4</p>
+            </div>
+            <div class="product">
+                <img src="https://thumbs.dreamstime.com/z/store-brand-makeup-aisle-sephora-cosmetics-retail-mall-orlando-fl-usa-175492762.jpg" alt="Product 5">
+                <p>Product 5</p>
+            </div>
+            <div class="product">
+                <img src="https://5.imimg.com/data5/WU/PE/LP/SELLER-2612304/supermarket-crockery-racks-500x500.jpeg" alt="Product 6">
+                <p>Product 6</p>
+            </div>
+        </div>
+    </section>
+    <!-- Best of Electronics -->
+<section class="best-electronics">
+    <h2>Best of Electronics</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/61sS4cwivkL.jpg" alt="True Wireless Earbuds">
+            <p>Best True Wireless Earbuds</p>
+            <p>Grab Now</p>
+        </div>
+        <div class="product">
+            <img src="https://www.bhphotovideo.com/images/images2500x2500/Optoma_Technology_DS339_DS339_SVGA_Multimedia_Projector_866689.jpg" alt="Projector">
+            <p>Projector</p>
+            <p>From ₹6990</p>
+        </div>
+        <div class="product">
+            <img src="https://i.ytimg.com/vi/Zjr_1qwmnnw/maxresdefault.jpg" alt="Smartwatches">
+            <p>boAt Smartwatches</p>
+            <p>From ₹999</p>
+        </div>
+        <div class="product">
+            <img src="https://www.bhphotovideo.com/images/images2500x2500/canon_1279c011aa_eos_m5_mirrorless_digital_1281375.jpg" alt="Mirrorless Camera">
+            <p>Top Mirrorless Cameras</p>
+            <p>Shop Now!</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/83ec200f-06c0-47d7-a076-b8e5d3b9e020.ddfac44866e0ee6c95da65673250822d.jpeg" alt="Printer">
+            <p>Printers</p>
+            <p>From ₹2336</p>
+        </div>
+        <div class="product">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.wqNcJRp9rIs6-eHreAY8agHaGH&pid=Api&P=0&h=220" alt="Monitor">
+            <p>ViewSonic Monitors</p>
+            <p>From ₹8000</p>
+        </div>
+    </div>
+</section>
+
+<!-- Beauty, Food, Toys & More -->
+<section class="beauty-food-toys">
+    <h2>Beauty, Food, Toys & more</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.BQTt5vaPXomBjewK-99-uQHaEv&pid=Api&P=0&h=220" alt="Stationery">
+            <p>Top Selling Stationery</p>
+            <p>From ₹49</p>
+        </div>
+        <div class="product">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.p_C9ld1Usn3Nhq_FounMtgHaHa&pid=Api&P=0&h=220" alt="Action Toys">
+            <p>Best of Action Toys</p>
+            <p>Up to 70% Off</p>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/71hFhIkhSmL.SL1500.jpg" alt="Coffee Powder">
+            <p>Coffee Powder</p>
+            <p>Up to 80% Off</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/d5a07031-c3f5-4006-a8fe-c4caa767f26d.3af1c39825906baaa1ff2dca1122bc6d.jpeg" alt="Electric Cycle">
+            <p>Electric Cycle</p>
+            <p>Up to 40% Off</p>
+        </div>
+        <div class="product">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.HxtyrUDXjRQq2J9Sn5Mu0AAAAA&pid=Api&P=0&h=220" alt="Treadmill">
+            <p>Treadmill, Exercise Bikes</p>
+            <p>Up to 70% Off</p>
+        </div>
+        <div class="product">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.rlFPLaoEMGc60mqobPsNrwHaHa&pid=Api&P=0&h=220" alt="Food Spreads">
+            <p>Food Spreads</p>
+            <p>Up to 75% Off</p>
+        </div>
+    </div>
+</section>
+<!-- Travel Essential picks-->
+ <section class="Travel essentials">
+    <h2>Travel Essential picks</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81ZM6fmHmVL.UL1500.jpg" alt="Men's slippers">
+            <p>Men's slippers</p>
+            <p>Min.70% off</p>
+        </div>
+        <div class="product">
+            <img src="https://cdn.shopclues.com/images1/detailed/110815/151029694-110815232-1601826141.jpg" alt="Men's casual shoes">
+            <p>Men's casual shoes</p>
+            <p>Min.70% off</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/d4522cbd-6c1b-41bb-8f8c-eb2f8c138e76_1.b5fa2f30f5259f197b8266dfea550186.jpeg" alt="Backpacks">
+            <p>Backpacks</p>
+            <p>Min.70% off</p>
+        </div>
+        <div class="product">
+            <img src="https://www.jacketsexpert.com/wp-content/uploads/2021/02/mens-sherpa-collar-brown-leather-jacket.jpg" alt="Men's jacket">
+            <p>Men's jacket</p>
+            <p>Special offer</p>
+        </div>
+    </div>
+ </section>
+ <!-- Home Decor & Furnishings-->
+  <section class="Home decor & furnishings">
+    <h2>Home decor & furnishings</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81KhPoOJNeL.jpg" alt="cups and saucers">
+            <p>cups and saucers</p>
+            <p>Min.50% off</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/85008d49-3ec6-4668-a098-0f8b44c9ddf6.e452b6212d937f540494383fa2d73c10.png?odnWidth=1000&odnHeight=1000&odnBg=ffffff" alt="artificial plants">
+            <p>artificial plants</p>
+            <p>Min.50% off</p>
+        </div>
+        <div class="product">
+            <img src="https://i1.wp.com/magzhouse.com/wp-content/uploads/2020/03/Fabulous-Bookshelf-Design-Ideas-For-Your-Interior-Decor-34.jpg?ssl=1" alt="book shelves">
+            <p>book shelves</p>
+            <p>Min.50% off</p>
+        </div>
+        <div class="product">
+            <img src="https://img.staticmb.com/mbcontent/images/uploads/2022/5/A%20Wall%20Mounted%20Wooden%20Mandir%20Design%20for%20Home.jpg" alt="home temple">
+            <p>home temple</p>
+            <p>Min.50% off</p>
+        </div>
+    </div>
+  </section>
+  <!-- Trending Gadgets & applications-->
+   <section class="Trending gadgets & applications">
+    <h2>Trending gadgets and applications</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://specials-images.forbesimg.com/imageserve/5d30e19aeab9270008f9c069/960x0.jpg?fit=scale" alt="Grooming kit">
+            <p>Grooming kit</p>
+            <p>Min.50% off</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/359d7457-9d67-4f33-a13d-8c0ff3ab5d4a_1.a40b3162384832710505e3eeb5130bed.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff" alt="Trimmers">
+            <p>Trimmer</p>
+            <p>Min.50% off</p>
+        </div>
+        <div class="product">
+            <img src="https://s.studiobinder.com/wp-content/uploads/2019/11/Different-Types-of-Cameras-Featured-StudioBinder-min.jpg" alt="cameras">
+            <p>Cameras</p>
+            <p>Min.30% off</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/d059a2b8-e269-4f1b-b611-b36c4e41b2ab_1.4fc850428a3e45eceeea27edb3e43aa9.jpeg" alt="Hair dryers">
+            <p>Hair dryers</p>
+            <p>Min.50% off</p>
+        </div>
+    </div>
+   </section>
+   <!-- Make your home stylish-->
+    <section class="Make your home stylish">
+        <h2>Make your home stylish</h2>
+        <div class="product-grid">
+            <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/71Etj7eRqTL.AC_SL1500.jpg" alt="choppers and slicers">
+                    <p>Choppers and slicers</p>
+                    <p>Min.50% off</p>
+            </div>
+            <div class="product">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/9120SLVkhNL.AC_SL1500.jpg" alt="Water bottles and flasks">
+                <p>Water bottles and flasks</p>
+                <p>Min.50% off</p>
+            </div>
+            <div class="product">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.OKd6XVA1RCmxOMwydIBI2QAAAA&pid=Api&P=0&h=220" alt="pressure cookers">
+                <p>pressure cookers</p>
+                <p>Min.50% off</p>
+            </div>
+            <div class="product">
+                <img src="https://rukminim1.flixcart.com/image/612/612/l4ssfww0/collapsible-wardrobe/e/e/u/1257-pvc-464-3-8-6-2-shelf-3-door-collapsible-wardrobe-grey-ahyd-original-imagfhzegngyukpn.jpeg?q=70" alt="collapsible wardrobes">
+                <p>collapsible wardrobes</p>
+                <p>Min.50% off</p>
+
+            </div>
+    </section>
+
+<!-- Winter Beauty and grooming-->
+ <section class="Winter beauty and grooming">
+    <h2>Winter beauty and grooming</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://allurebeautyworld.com/wp-content/uploads/2019/01/Best-face-packs-for-glow-that-are-readymade-in-India.jpg" alt="face packs">
+            <p>face packs</p>
+            <p>Min.50% off</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/f9cc9047-3eb3-4c69-9100-0a9d747f31fb_1.4e32f8bb744ba41f6ae7662ad9a54416.jpeg" alt="moisturizer">
+            <p>moisturizer</p>
+            <p>Min.50% off</p>
+        </div>
+        <div class="product">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81D5KjcW8SL.SL1500.jpg" alt="bath brush">
+            <p>bath brush</p>
+            <p>Min.50% off</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/c4f91814-d205-4c2f-9908-bebbc03857fd.c79d819865936b85483fbe2140660b1a.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff" alt="bath sponge">
+            <p>bath sponge</p>
+            <p>Grab or Gone</p>
+        </div>
+    </div>
+ </section>
+ <!-- Grooming,Books,Auto & More-->
+  <section class="Grooming,Books,Auto & More">
+    <h2>Grooming,Books,Auto & More</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.t141MyyAYr7MbMH4u3u16wAAAA&pid=Api&P=0&h=220" alt="Musical keyboards">
+            <p>Musical keyboards</p>
+            <p>Upto 70% off</p>
+        </div>
+        <div class="product">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.XuUHOqVtCRgrwHq9gAVh0wHaGu&pid=Api&P=0&h=220" alt="string instruments">
+            <p>string instruments</p>
+            <p>Upto 70% off</p>
+        </div>
+        <div class="product">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.ltUrv818oBWOBh6j2aRnSAHaEj&pid=Api" alt="Non geared cycles">
+            <p>Non geared cycles</p>
+            <p>Upto 40% off</p>
+        </div>
+        <div class="product">
+            <img src="https://i5.walmartimages.com/asr/d4ef14bd-4647-4608-ac26-19ab91e7a17a.ec695b1546cbdcd84c33543b940cc260.jpeg" alt="Soft toys">
+            <p>Soft toys</p>
+            <p>Upto 70% off</p>
+        </div>
+    </div>
+  </section>
+  <!-- Furniture deals-->
+   <section class="Furniture deals">
+    <h2>Furniture deals</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://images.furnituredealer.net/img/products/signature_design_by_ashley/color/chamberly%20-%201195589344_2430216%2B34%2B77%2B46%2B56-b0.jpg" alt="Sofa and Sectionals">
+            <p>Sofa and Sectionals</p>
+            <p>From Rs.7,999</p>
+        </div>
+        <div class="product">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.14e_m4JvdGMhbCmDCahzbAHaHa&pid=Api&P=0&h=220" alt="Office study chairs">
+            <p>Office study chairs</p>
+            <p>From Rs.1,890</p>
+        </div>
+        <div class="product">
+            <img src="https://images.woodenstreet.de/image/data/tv-units-mdf/caden-tv-unit/exotic-teak-frosty-white/updated/new-one-1.jpg" alt="tv units">
+            <p>tv units</p>
+            <p>From Rs.1,249</p>
+        </div>
+        <div class="product">
+            <img src="https://ik.imagekit.io/ryjkjxnzq/wp-content/uploads/2020/05/Novogratz-Upholstered-Cassidy-Convertible-Couch-Ivory-Velvet-Futon.jpg" alt="sofa beds">
+            <p>sofa beds</p>
+            <p>From Rs.6,099</p>
+        </div>
+    </div>
+   </section>
+   <!-- Fashion Top deals-->
+    <section class="Fashion Top deals">
+        <h2>Fashion Top deals</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://www.omsara.co.uk/wp-content/uploads/4804.-1-1-scaled.jpeg" alt="Lehnga cholis and gowns">
+                <p>Lehnga choli's and gowns</p>
+                <p>Buy 3,get 10% off</p>
+            </div>
+            <div class="product">
+                <img src="https://i.pinimg.com/736x/8a/19/4a/8a194ab841a67194ef637940fdd268ab.jpg" alt="Women's nightsuits">
+                <p>Women's nightsuits</p>
+                <p>Upto 80% off</p>
+            </div>
+            <div class="product">
+                <img src="https://i5.walmartimages.com/asr/1b568581-99fc-4295-b9ad-ab57febbffc6_1.fce835a2ee5a9e5fc126711b1ef91377.jpeg" alt="Women's shirts">
+                <p>Women's shirts</p>
+                <p>Min.70% off</p>
+            </div>
+            <div class="product">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.EXXx3MaFlELxAAxKD6DtRAAAAA&pid=Api&P=0&h=220" alt="Kid's clothing">
+                <p>Kid's clothing</p>
+            </div>
+        </div>
+    </section>
+    <!-- Top deals-->
+     <section class="Top deals">
+        <h2>Top deals</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.nXPC03XBz0rr_6NAXe8tIgHaE8&pid=Api&P=0&h=220" alt="shoes">
+                <p>shoes</p>
+                <p>Min.40% off</p>
+            </div>
+            <div class="product">
+                <img src="https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipad-pro-spring21_hero_04202021_big.jpg.large.jpg" alt="apple ipad's">
+                <p>apple ipad's</p>
+                <p>Shop Now</p>
+            </div>
+            <div class="product">
+                <img src="https://s.yimg.com/uu/api/res/1.2/.PfabNGOlJ7c3tz77VmJFQ--~B/aD0xMzMzO3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://o.aolcdn.com/images/dims?resize=2000%2C2000%2Cshrink&image_uri=https://s.yimg.com/os/creatr-uploaded-images/2019-10/d12ac3a0-f988-11e9-bfff-f90d82fdf9b6&client=a1acac3e1b3290917d92&signature=172f40cedfcb5d2f86029053b735d311a66143b3" alt="apple pencil">
+                <p>apple pencil</p>
+                <p>Shop Now</p>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/61nYNJ7O1BL.jpg" alt="chargers">
+                <p>chargers</p>
+                <p>From Rs.99</p>
+            </div>
+        </div>
+     </section>
+     <!-- Books,Toys & More-->
+      <section class="Books,Toys & More">
+        <h2>Books,Toys & More</h2>
+        <div class="product-grid">
+           
+            <div class="product">
+                <img src="https://autowise.com/wp-content/uploads/2019/06/MEGUIARS-car-air-freshener.jpg" alt="car air freshner">
+                <p>car air freshner</p>
+                <p>From Rs.199</p>
+            </div>
+            <div class="product">
+                <img src="https://cf.shopee.sg/file/7b678fbe612fe2381ba48407e74a4baa" alt="Vehicle Washing cloth">
+                <p>Vehicle washing cloth</p>
+                <p>From Rs.149</p>
+            </div>
+            <div class="product">
+                <img src="https://i5.walmartimages.com/seo/ONE-ORGANIC-Instant-Black-Tea-Powder-4-4-Oz_ad4e947a-2325-454d-ae9a-9eb63f904739_1.5650b30280ef61614d47b33752053daa.jpeg" alt="Tea powder">
+                <p>Tea powder</p>
+                <p>Upto 75% off</p>
+            </div>
+            <div class="product">
+                <img src="https://www.autoaccessoriesgarage.com/img/group/main/47/4717_1_lg.jpg" alt="Car body cover pics">
+                <p>Car body cover</p>
+                <p>From Rs.299</p>
+            </div>
+        </div>
+      </section>
+ <!-- Customer Reviews -->
+<section class="customer-reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="review">"Amazing quality products and quick delivery!"</div>
+    <div class="review">"The prices are unbeatable. Highly recommend!"</div>
+</section>
+
+
+
+    <!-- Footer -->
+    {% endblock %}
+
